@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from unidecode import unidecode
     
 
 class ot_modulo(models.Model):
@@ -13,6 +14,18 @@ class ot_modulo(models.Model):
     description = fields.Text()
     #agregando un nuevo campo... campo de fecha y hora
     start_datetime = fields.Datetime('Start time', default=lambda self: fields.Datetime.now())
+    
+    @api.model
+    def create(self, values):
+        if 'name' in values:
+            values['name'] = unidecode(values['name'])
+        return super(ot_modulo, self).create(values)
+
+    @api.multi
+    def write(self, values):
+        if 'name' in values:
+            values['name'] = unidecode(values['name'])
+        return super(ot_modulo, self).write(values)
 
     @api.depends('value')
     def _value_pc(self):
