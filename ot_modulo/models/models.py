@@ -21,7 +21,6 @@ class ot_modulo(models.Model):
             values['name'] = unidecode(values['name'])
         return super(ot_modulo, self).create(values)
 
-    @api.multi
     def write(self, values):
         if 'name' in values:
             values['name'] = unidecode(values['name'])
