@@ -2,7 +2,6 @@
 
  from odoo import http
 
-
  class OtModulo(http.Controller):
      @http.route('/ot_modulo/ot_modulo/', auth='public')
      def index(self, **kw):

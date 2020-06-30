@@ -2,7 +2,6 @@
 
  from odoo import models, fields, api
 
-
  class ot_modulo(models.Model):
      _name = 'ot_modulo.ot_modulo'
      _description = 'ot_modulo.ot_modulo'
