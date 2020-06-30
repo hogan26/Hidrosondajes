@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
  from odoo import http
+    
 
  class OtModulo(http.Controller):
      @http.route('/ot_modulo/ot_modulo/', auth='public')
