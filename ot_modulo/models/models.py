@@ -11,6 +11,8 @@ class ot_modulo(models.Model):
     value = fields.Integer()
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
+    #agregando un nuevo campo... campo de fecha y hora
+    start_datetime = fields.Datetime('Start time', default=lambda self: fields.Datetime.now())
 
     @api.depends('value')
     def _value_pc(self):
