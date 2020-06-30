@@ -13,7 +13,7 @@
           <field name="estado"/>
           <field name="equipo"/>
           <field name="descripcion"/>
-          <field name="start_datetime"/>
+          <field name="fecha"/>
         </tree>
       </field>
     </record>
