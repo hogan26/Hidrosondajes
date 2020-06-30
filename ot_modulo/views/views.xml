@@ -7,9 +7,13 @@
       <field name="model">ot_modulo.ot_modulo</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id"/>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="cliente"/>
+          <field name="estado"/>
+          <field name="equipo"/>
+          <field name="descripcion"/>
+          <field name="fecha"/>
         </tree>
       </field>
     </record>
@@ -18,7 +22,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="ot_modulo.action_window">
-      <field name="name">ot_modulo window</field>
+      <field name="name">Ordenes de trabajo</field>
       <field name="res_model">ot_modulo.ot_modulo</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -46,15 +50,36 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="ot_modulo.menu_1" parent="ot_modulo.menu_root"/>
-    <menuitem name="Menu 2" id="ot_modulo.menu_2" parent="ot_modulo.menu_root"/>
+    <menuitem name="OT" id="ot_modulo.menu_1" parent="ot_modulo.menu_root"/>
+    <menuitem name="Clientes" id="ot_modulo.menu_2" parent="ot_modulo.menu_root"/>
+    <menuitem name="Informes" id="ot_modulo.menu_3" parent="ot_modulo.menu_root"/>
+    <menuitem name="Equipos" id="ot_modulo.menu_4" parent="ot_modulo.menu_root"/>
 
-    <!-- actions -->
+    <!-- actions OT-->
 
-    <menuitem name="List" id="ot_modulo.menu_1_list" parent="ot_modulo.menu_1"
+    <menuitem name="Lista" id="ot_modulo.menu_1_list" parent="ot_modulo.menu_1"
               action="ot_modulo.action_window"/>
-    <menuitem name="Server to list" id="ot_modulo" parent="ot_modulo.menu_2"
+      
+    <!-- actions Clientes-->
+      
+    <menuitem name="Lista de clientes" id="ot_modulo" parent="ot_modulo.menu_2"
               action="ot_modulo.action_server"/>
+      
+    <!-- actions Informes-->      
+      
+    <menuitem name="Reporte de ordenes de trabajo" id="ot_modulo_reporte" parent="ot_modulo.menu_3"
+              action="ot_modulo.action_window"/>
+    <menuitem name="Valoracion de ordenes de trabajo" id="ot_modulo_valoracion" parent="ot_modulo.menu_3"
+              action="ot_modulo.action_window"/>
+      
+    <!-- actions Equipos-->        
+      
+    <menuitem name="Reporte de equipos de trabajo" id="ot_modulo_reporte_equipo" parent="ot_modulo.menu_4"
+              action="ot_modulo.action_window"/>
+    <menuitem name="Valoracion de equipos" id="ot_modulo_valoracion_equipo" parent="ot_modulo.menu_4"
+              action="ot_modulo.action_window"/>
+    <menuitem name="Incidentes" id="ot_modulo_incidentes" parent="ot_modulo.menu_4"
+              action="ot_modulo.action_window"/>  
 
   </data>
 </odoo>
