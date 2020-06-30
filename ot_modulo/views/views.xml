@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="cliente"/>
           <field name="estado"/>
           <field name="equipo"/>
